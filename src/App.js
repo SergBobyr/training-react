@@ -1,10 +1,16 @@
+import {useState} from "react";
 
-const App=() => {
-  return (
-    <div >
-     Hello
-    </div>
-  );
+import {Users} from "./components";
+import {Posts} from "./components";
+
+const App = () => {
+    const [userId, setUserId] = useState(null)
+    return (
+        <div>
+            <Users serUserId={setUserId}/>
+            {userId && <Posts userId={userId}/>}
+        </div>
+    );
 }
 
-export  {App};
+export {App};
